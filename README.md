@@ -19,6 +19,13 @@ Here are the controls!
 - `Space` key press to start running the algorithm, and run it for the pre-added list.
 - `R` Key press to generate a random array again, and sort it using the algorithm.
 
+**Color Coding Syntax:**
+        
+- `TURQUOISE`: SWAP In progress
+- `RED`: They're static, no swap
+- `GREEN`: They're swapped
+- `WHITE`: Reset Color
+
 **Modifying the default list**
 
 You can modify the default list, by changing the value of the variable `ARRAY` in `__init__.py`

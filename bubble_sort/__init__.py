@@ -75,6 +75,14 @@ class BubbleSort:
             pygame.draw.line(self.window, self.COLOR_MAP[idx], position_1, position_2)
 
     def bubble_sort(self):
+        """
+        Color Coding Syntax:
+        
+        - TURQUOISE: SWAP In progress
+        - RED: They're static, no swap
+        - GREEN: They're swapped
+        - WHITE: Reset Color
+        """
         for i in range(1, len(self.ARRAY)):
             for j in range(0, len(self.ARRAY) - i):
 
