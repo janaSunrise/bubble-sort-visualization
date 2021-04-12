@@ -14,7 +14,7 @@ class BubbleSort:
     TICKS = 10
     VALUE_COUNT = 20
 
-    ARRAY = ARRAY
+    ARRAY = ARRAY.copy()
     COLOR_MAP = {}
 
     def __init__(self) -> None:
