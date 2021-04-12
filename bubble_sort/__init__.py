@@ -52,7 +52,7 @@ class BubbleSort:
     def draw_lines(self):
         self.window.fill(Colors.BLACK)
 
-        self.ARRAY = scale_list(self.ARRAY, (0, SCREEN_HEIGHT))
+        self.ARRAY = scale_list(self.ARRAY, (1, SCREEN_HEIGHT))
 
         for idx, elem in enumerate(self.ARRAY):
             elem = round(elem)
@@ -88,3 +88,4 @@ class BubbleSort:
                 self.COLOR_MAP[j], self.COLOR_MAP[j + 1] = Colors.WHITE, Colors.WHITE
 
             self.COLOR_MAP[len(self.ARRAY) - i] = Colors.GREEN
+        self.update_screen()

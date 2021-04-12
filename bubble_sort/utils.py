@@ -17,5 +17,5 @@ def scale_value(value, old_range: tuple, new_range: tuple):
 def scale_list(lst: list, range_: tuple):
     old_range = (min(lst), max(lst))
 
-    scaled_list = [scale_value(elem, old_range, range_) for elem in lst]
+    scaled_list = [round(scale_value(elem, old_range, range_)) for elem in lst]
     return scaled_list
