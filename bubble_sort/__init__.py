@@ -3,7 +3,7 @@ import sys
 import pygame
 
 from .colors import Colors
-from .utils import generate_random_values
+from .utils import generate_random_values, scale_list
 
 SCREEN_HEIGHT, SCREEN_WIDTH = 500, 450
 GAP = 10
@@ -48,6 +48,8 @@ class BubbleSort:
 
     def draw_lines(self):
         self.window.fill(Colors.BLACK)
+
+        self.ARRAY = scale_list(self.ARRAY, (0, SCREEN_HEIGHT))
 
         for idx, elem in enumerate(self.ARRAY):
             elem = round(elem)
