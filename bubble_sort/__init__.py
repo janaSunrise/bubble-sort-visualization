@@ -3,13 +3,14 @@ import sys
 import pygame
 
 from .colors import Colors
+from .utils import generate_random_values
 
 SCREEN_HEIGHT, SCREEN_WIDTH = 500, 450
 GAP = 10
 
 
 class BubbleSort:
-    ARRAY = [24, 12, 3, 36, 6, 50, 21, 2, 17, 9, 36, 44, 40, 26, 28]
+    ARRAY = generate_random_values(25, (5, 80))
     COLOR_MAP = {}
 
     def __init__(self) -> None:
@@ -20,14 +21,28 @@ class BubbleSort:
 
         pygame.display.set_caption("Bubble sort visualization")
 
-    def update_screen(self):
+    def start(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        self.bubble_sort()
+
+                    if event.key == pygame.K_r:
+                        self.ARRAY = generate_random_values(20, (5, 75))
+                        self.bubble_sort()
+
+    def update_screen(self) -> None:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
 
         self.draw_lines()
-
         pygame.display.update()
         self.clock.tick(10)
 
