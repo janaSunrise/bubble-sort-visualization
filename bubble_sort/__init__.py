@@ -10,7 +10,10 @@ GAP = 10
 
 
 class BubbleSort:
-    ARRAY = generate_random_values(25, (5, 80))
+    TICKS = 10
+    VALUE_COUNT = 20
+
+    ARRAY = generate_random_values(VALUE_COUNT, (5, 80))
     COLOR_MAP = {}
 
     def __init__(self) -> None:
@@ -33,7 +36,7 @@ class BubbleSort:
                         self.bubble_sort()
 
                     if event.key == pygame.K_r:
-                        self.ARRAY = generate_random_values(20, (5, 75))
+                        self.ARRAY = generate_random_values(self.VALUE_COUNT, (5, 75))
                         self.bubble_sort()
 
     def update_screen(self) -> None:
@@ -44,7 +47,7 @@ class BubbleSort:
 
         self.draw_lines()
         pygame.display.update()
-        self.clock.tick(10)
+        self.clock.tick(self.TICKS)
 
     def draw_lines(self):
         self.window.fill(Colors.BLACK)
