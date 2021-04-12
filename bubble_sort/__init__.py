@@ -7,13 +7,14 @@ from .utils import generate_random_values, scale_list
 
 SCREEN_HEIGHT, SCREEN_WIDTH = 500, 450
 GAP = 10
+ARRAY = [25, 38, 80, 31, 62, 52, 36, 11, 73, 51, 43, 32, 37, 8, 14, 26, 58, 23, 13, 20]
 
 
 class BubbleSort:
     TICKS = 10
     VALUE_COUNT = 20
 
-    ARRAY = generate_random_values(VALUE_COUNT, (5, 80))
+    ARRAY = ARRAY
     COLOR_MAP = {}
 
     def __init__(self) -> None:
@@ -33,6 +34,7 @@ class BubbleSort:
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
+                        self.ARRAY = ARRAY.copy()
                         self.bubble_sort()
 
                     if event.key == pygame.K_r:
