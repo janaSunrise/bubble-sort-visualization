@@ -54,17 +54,17 @@ class BubbleSort:
     def draw_lines(self):
         self.window.fill(Colors.BLACK)
 
-        self.ARRAY = scale_list(self.ARRAY, (1, SCREEN_HEIGHT))
+        array = scale_list(self.ARRAY, (1, SCREEN_HEIGHT))
 
-        for idx, elem in enumerate(self.ARRAY):
+        for idx, elem in enumerate(array):
             elem = round(elem)
 
             if idx not in self.COLOR_MAP:
                 self.COLOR_MAP[idx] = Colors.WHITE
 
             # Positions mapping
-            # Start of the line is the TOP section, Get the index and gap multiplication, and add a gap of 5
-            x_axis = idx * GAP + 5
+            # Start of the line is the TOP section, Get the index and gap multiplication, and add a gap of 10
+            x_axis = idx * GAP + 10
 
             position_1 = (x_axis, SCREEN_HEIGHT)
 
