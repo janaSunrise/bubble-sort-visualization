@@ -87,7 +87,10 @@ class BubbleSort:
             for j in range(0, len(self.ARRAY) - i):
 
                 if self.ARRAY[j] > self.ARRAY[j + 1]:
-                    self.COLOR_MAP[j], self.COLOR_MAP[j + 1] = Colors.TURQUOISE, Colors.TURQUOISE
+                    self.COLOR_MAP[j], self.COLOR_MAP[j + 1] = (
+                        Colors.TURQUOISE,
+                        Colors.TURQUOISE,
+                    )
 
                     self.ARRAY[j], self.ARRAY[j + 1] = self.ARRAY[j + 1], self.ARRAY[j]
                 else:
